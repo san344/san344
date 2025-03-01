@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .calculator 
+        {
+            width: 260px;
+            margin: 200px auto;
+            padding: 30px;
+            border: 2px solid #a8ed88e8;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .calculator input 
+        {
+            width: 100%;
+            height: 40px;
+            text-align: right;
+            font-size: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .calculator button 
+        {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .calculator button:active 
+        {
+            background-color: #038f1fa5;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div>
+            <button onclick="appendValue('1')">1</button>
+            <button onclick="appendValue('2')">2</button>
+            <button onclick="appendValue('3')">3</button>
+            <button onclick="appendValue('4')">4</button>
+            <button onclick="appendValue('5')">5</button>
+            <button onclick="appendValue('6')">6</button>
+            <button onclick="appendValue('7')">7</button>
+            <button onclick="appendValue('8')">8</button>
+            <button onclick="appendValue('9')">9</button>
+            <button onclick="appendValue('0')">0</button>
+            <button onclick="appendValue('+')">+</button>
+            <button onclick="appendValue('-')">-</button>
+            <button onclick="appendValue('*')">*</button>
+            <button onclick="appendValue('/')">/</button>
+            <button onclick="clearDisplay()">C</button>
+            <button onclick="calculateResult()">=</button>
+        </div>
+    <script>
+        function appendValue(value) 
+        {
+            document.getElementById('display').value += value;
+        }
+        function clearDisplay() 
+        {
+            document.getElementById('display').value = '';
+        }
+        function calculateResult() 
+        {
+            let expression = document.getElementById('display').value;
+            try 
+            {
+                document.getElementById('display').value = eval(expression);
+            } 
+            catch (error)
+             {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

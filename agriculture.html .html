@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>My Project</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .navbar {
+            background-color: green;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .banner {
+            position: relative;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .text {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+
+        .section {
+            text-align: center;
+            padding: 30px;
+            background: #f2f2f2;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        button {
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="system.html">System</a>
+    <a href="tips.html">Tips</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="farm.jpg">
+
+    <div class="text">
+        <h1>🌱 Smart Water Saving System</h1>
+        <p>Save Water • Improve Farming</p>
+    </div>
+</div>
+
+<!-- About -->
+<div class="section">
+    <h2>About System</h2>
+    <p>
+        This system helps farmers save water by checking soil condition.
+    </p>
+    <p>
+        ఈ సిస్టమ్ రైతులకు నీటిని ఆదా చేయడంలో సహాయం చేస్తుంది.
+    </p>
+</div>
+
+<!-- System Box -->
+<div class="section">
+
+    <div class="box">
+        <h3>Check Soil Condition</h3>
+
+        <button onclick="checkSoil('dry')">Dry Soil</button>
+        <button onclick="checkSoil('wet')">Wet Soil</button>
+
+        <p id="result"></p>
+    </div>
+
+</div>
+
+<!-- Tips -->
+<div class="section">
+    <h2>🌾 Farmer Tips</h2>
+
+    <p>✔ Use drip irrigation</p>
+    <p>✔ Water plants in morning</p>
+    <p>✔ Avoid over watering</p>
+</div>
+
+<script>
+function checkSoil(condition) {
+    if(condition === 'dry') {
+        document.getElementById("result").innerHTML = "💧 Soil Dry → Water Needed";
+    } else {
+        document.getElementById("result").innerHTML = "✅ Soil Wet → No Water Needed";
+    }
+}
+</script>
+
+</body>
+</html>

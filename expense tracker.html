@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Expense Tracker</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+/* Navbar */
+nav {
+    background: teal;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header img {
+    width: 80px;
+}
+
+/* Input section */
+.container {
+    text-align: center;
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    background: teal;
+    color: white;
+    border: none;
+}
+
+/* Cards */
+.card {
+    background: white;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    font-size: 20px;
+    color: green;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <div>💸 Expense Tracker</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+  <section style="padding:30px; background:#e0f7fa; text-align:center;">
+
+<h1 style="color:teal;">💸 Welcome to Expense Tracker</h1>
+
+<p style="max-width:700px; margin:auto; font-size:16px;">
+
+This website is designed to help you manage your daily expenses in a simple and effective way. 
+Many people spend money daily but do not keep track of where it goes. This leads to unnecessary 
+spending and difficulty in saving money. Our Expense Tracker helps you solve this problem easily.
+
+<br><br>
+
+You can add your daily expenses like food, travel, shopping, and other needs. The website 
+automatically calculates the total amount, so you can clearly understand your spending habits. 
+By using this tool regularly, you can control your expenses and improve your financial planning.
+
+<br><br>
+
+Ee website daily life lo chala useful. Meeru mee rojoo kharchulu easy ga track cheyyachu. 
+Ekkada ekkuva dabbu spend chesthunaro telustundi. Ila tracking chesthe future lo manchi savings 
+chesukovachu.
+
+<br><br>
+
+Students, employees, and families andariki idi helpful tool. Simple design valla easy ga use 
+cheyyachu. No confusion, just add and track your expenses.
+
+<br><br>
+
+<b>Start using this Expense Tracker today and take control of your money!</b>
+
+</p>
+
+</section>
+  <section style="padding:30px; background:#ffffff; text-align:center;">
+
+<h2 style="color:teal;">✨ How to Use & Benefits</h2>
+
+<div style="max-width:800px; margin:auto; text-align:left; font-size:16px;">
+
+<h3>📌 How to Use</h3>
+<ul>
+<li>Enter your expense name (Food, Travel, Shopping)</li>
+<li>Enter the amount</li>
+<li>Click on "Add" button</li>
+<li>Your expense will be added and total will be calculated automatically</li>
+</ul>
+
+<h3>💡 Uses / Benefits</h3>
+<ul>
+<li>Track your daily expenses easily</li>
+<li>Understand where your money is going</li>
+<li>Control unnecessary spending</li>
+<li>Improve your savings</li>
+<li>Helpful for students, employees, and families</li>
+</ul>
+
+<h3>📌 Telugu Explanation</h3>
+<ul>
+<li>Mee daily kharchulu easy ga track cheyyachu</li>
+<li>Dabbu ekkada spend avutundo telustundi</li>
+<li>Unnecessary kharchulu control cheyyachu</li>
+<li>Future kosam savings improve cheyyachu</li>
+<li>Students, employees andariki useful</li>
+</ul>
+
+</div>
+
+</section>
+
+<header>
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135679.png">
+    <h1>Daily Expense Tracker</h1>
+</header>
+
+<div class="container">
+
+    <input type="text" id="name" placeholder="Expense name">
+    <input type="number" id="amount" placeholder="Amount">
+    <button onclick="addExpense()">Add</button>
+
+    <h2 class="total">Total: ₹ <span id="total">0</span></h2>
+
+    <div id="list"></div>
+
+</div>
+
+<script>
+let total = 0;
+
+function addExpense() {
+    let name = document.getElementById("name").value;
+    let amount = document.getElementById("amount").value;
+
+    if(name === "" || amount === "") {
+        alert("Enter details");
+        return;
+    }
+
+    let div = document.createElement("div");
+    div.className = "card";
+
+    div.innerHTML = `
+        <span>${name}</span>
+        <span>₹${amount}</span>
+    `;
+
+    document.getElementById("list").appendChild(div);
+
+    total += Number(amount);
+    document.getElementById("total").innerText = total;
+
+    document.getElementById("name").value = "";
+    document.getElementById("amount").value = "";
+}
+</script>
+
+</body>
+</html>

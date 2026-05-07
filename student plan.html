@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exam Planner</title>
+<meta charset="UTF-8">
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+background:#f2f2f2;
+
+    margin:0;
+    font-family:Arial;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    animation:slide 20s infinite ease-in-out;
+    backdrop-filter: blur(3px);
+}
+    
+
+/* Moving Background Images */
+    
+
+@keyframes slide{
+
+0%{
+background-image:url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+}
+
+25%{
+background-image:url('https://images.unsplash.com/photo-1513258496099-48168024aec0');
+}
+
+50%{
+background-image:url('https://images.unsplash.com/photo-1509062522246-3755977927d7');
+}
+
+75%{
+background-image:url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6');
+}
+
+100%{
+background-image:url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+}
+
+}
+}
+    
+    h1{
+color:blue;
+padding-top:20px;
+}
+
+
+.container {
+    margin-top: 20px;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    color: white;
+    margin-top:40px;
+
+}
+
+input {
+    padding: 10px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px;
+    background: teal;
+    color: white;
+    border: none;
+}
+
+.card {
+    background: white;
+    margin: 10px auto;
+    padding: 15px;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px grey;
+}
+</style>
+
+</head>
+
+<body>
+    <body>
+
+<nav style="
+    nav a:hover{
+color:yellow;
+transition:0.3s;
+}
+background: teal;
+padding: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+color: white;
+flex-wrap: wrap;
+    font-size:18px;
+font-weight:bold;
+    
+">
+
+<h2>📘 Student Planner</h2>
+
+<div>
+
+<a href="home exam.html" style="color:rani color; margin:10px; text-decoration:none;">Home</a>
+
+<a href="planner section.html" style="color:white; margin:10px; text-decoration:none;">Planner</a>
+
+<a href="timetable.html" style="color:rani color; margin:10px; text-decoration:none;">Timetable</a>
+
+<a href="study uses.html" style="color:white; margin:10px; text-decoration:none;">Uses</a>
+
+<a href="progress.html" style="color:white; margin:10px; text-decoration:none;">Progress</a>
+<a href="abouts.html" style="color:rani color; margin:10px; text-decoration:none;">About</a>
+
+<a href="contact.html" style="color:white; margin:10px; text-decoration:none;">Contact</a>
+</div>
+
+</nav>
+        
+<section style="
+background-image:url('YOUR IMAGE LINK');
+background-size:cover;
+background-position:center;
+padding:120px 20px;
+text-align:center;
+color:white;
+    box-shadow:0px 4px 15px black;
+">
+    <div style="
+background:rgba(0,0,0,0.5);
+padding:40px;
+border-radius:20px;
+">
+
+
+<h1>📘 Exam Preparation Planner</h1>
+    <p>
+Manage your studies, timetable, and exam preparation effectively.
+</p>
+        
+        
+    </section>
+
+    
+  
+
+<div class="container" id="planner">
+
+    <input type="text" id="subject" placeholder="Subject Name">
+    <input type="date" id="examDate">
+    <button onclick="addSubject()">Add</button>
+
+    <div id="list"></div>
+
+</div>
+    <section style="
+padding:20px;
+background:#f2f2f2;
+">
+
+<h2 style="
+text-align:center;
+color:teal;
+">
+📚 Study Features
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+">
+
+<!-- Card 1 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+width="100%">
+
+<p>
+Study Planning
+</p>
+
+</div>
+
+<!-- Card 2 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
+width="100%">
+
+<p>
+Exam Preparation
+</p>
+
+</div>
+
+<!-- Card 3 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
+width="100%">
+
+<p>
+Time Management
+</p>
+
+</div>
+
+<!-- Card 4 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3063/3063822.png"
+width="100%">
+
+<p>
+Progress Tracking
+</p>
+
+</div>
+
+<!-- Card 5 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png"
+width="100%">
+
+<p>
+Daily Goals
+</p>
+
+</div>
+
+<!-- Card 6 -->
+
+<div style="
+background:white;
+padding:10px;
+border-radius:15px;
+text-align:center;
+box-shadow:0px 4px 10px gray;
+">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3976/3976626.png"
+width="100%">
+
+<p>
+Study Timetable
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+function addSubject() {
+    let subject = document.getElementById("subject").value;
+    let examDate = document.getElementById("examDate").value;
+
+    if(subject === "" || examDate === "") {
+        alert("Enter all details");
+        return;
+    }
+    
+
+    let today = new Date();
+    let exam = new Date(examDate);
+
+    let diffTime = exam - today;
+    let daysLeft = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+    let plan = "";
+
+    if(daysLeft > 10) {
+        plan = "Study 2 hours daily";
+    } else if(daysLeft > 5) {
+        plan = "Study 4 hours daily";
+    } else {
+        plan = "Revise full syllabus daily";
+    }
+
+    let div = document.createElement("div");
+    div.className = "card";
+
+    div.innerHTML = `
+        <h3>${subject}</h3>
+        <p>📅 Exam Date: ${examDate}</p>
+        <p>⏳ Days Left: ${daysLeft}</p>
+        <p>📚 Plan: ${plan}</p>
+    `;
+
+    document.getElementById("list").appendChild(div);
+
+    document.getElementById("subject").value = "";
+}
+
+</body>
+</html>

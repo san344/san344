@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌾 Smart Farmer Help Portal</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f5fff5;
+    transition:0.4s;
+    margin-left: 240px; 
+}
+
+.dark{
+    background:#121212;
+    color:white;
+}
+
+.dark .card,
+.dark .weather,
+.dark .scheme,
+.dark .video-box{
+    background:#1f1f1f;
+    color:white;
+}
+
+nav{
+    background: green;
+    padding: 20px 15px;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 240px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+nav button{
+    background: white;
+    color: green;
+    border: none;
+    padding: 12px;
+    margin-top: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+header{
+    background:
+    linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb')
+    center/cover no-repeat;
+
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    font-size:18px;
+    margin-top:10px;
+}
+
+section{
+    padding:50px 20px;
+    text-align:center;
+}
+
+h2{
+    color:green;
+    margin-bottom:20px;
+}
+
+.search-box input{
+    padding:12px;
+    width:70%;
+    border:1px solid green;
+    border-radius:5px;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.card{
+    background:white;
+    width:280px;
+    margin:15px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    border-radius:10px;
+}
+
+.weather{
+    background:#e8ffe8;
+    width:80%;
+    margin:auto;
+    padding:30px;
+    border-radius:10px;
+}
+
+.form-box{
+    width:80%;
+    margin:auto;
+}
+
+.form-box input,
+textarea,
+select{
+    width:80%;
+    padding:12px;
+    margin:10px;
+    border:1px solid green;
+    border-radius:5px;
+}
+
+button{
+    background:green;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.dashboard{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.dashboard .box{
+    background:green;
+    color:white;
+    margin:10px;
+    padding:25px;
+    width:200px;
+    border-radius:10px;
+}
+
+.scheme{
+    background:white;
+    margin:15px auto;
+    padding:20px;
+    width:80%;
+    border-radius:10px;
+    box-shadow:0 0 5px #ccc;
+}
+
+.video-box iframe{
+    width:80%;
+    height:400px;
+    border:none;
+    border-radius:10px;
+}
+
+footer{
+    background:green;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+    body {
+        margin-left: 0;
+    }
+
+    nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    nav button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    .search-box input,
+    .form-box input,
+    textarea,
+    select{
+        width:95%;
+    }
+
+    .video-box iframe{
+        height:250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">🏠 Home</a>
+<a href="#crops">🌱 Crops</a>
+<a href="#weather">🌦 Weather</a>
+<a href="#fertilizer">🧪 Fertilizers</a>
+<a href="#dashboard">📊 Dashboard</a>
+<a href="#schemes">🔔 Schemes</a>
+<a href="#videos">🎥 Videos</a>
+<a href="#contact">📞 Contact</a>
+
+<button onclick="darkMode()">🌙 Dark Mode</button>
+</nav>
+
+<header id="home">
+<h1>🌾 Smart Farmer Help Portal</h1>
+<p>తెలంగాణ రైతులకు ఆధునిక వ్యవసాయ సహాయం</p>
+</header>
+
+<section>
+<h2>🔍 Search Crops</h2>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search crops..." onkeyup="searchCrops()">
+</div>
+</section>
+
+<section<!-- Crops -->
+<section id="crops">
+<h2>🌱 Popular Crops</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b">
+<h3>Rice</h3>
+<p>Main Telangana crop.</p>
+<button>Details</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<h3>Cotton</h3>
+<p>Commercial farming crop.</p>
+<button>Details</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf">
+<h3>Maize</h3>
+<p>Food and fodder crop.</p>
+<button>Details</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+<h3>Tomato</h3>
+<p>Vegetable farming crop.</p>
+<button>Details</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854">
+<h3>Sugarcane</h3>
+<p>Sweet cash crop.</p>
+<button>Details</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95">
+<h3>Sunflower</h3>
+<p>Oil producing crop.</p>
+<button>Details</button>
+</div>
+
+</div>
+</section>
+
+
+<section id="gallery">
+<h2>📸 Village Gallery</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+<h3>Green Fields</h3>
+</div>
+
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9">
+<h3>Farmer Working</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1523741543316-beb7fc7023d8">
+<h3>Village Road</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9">
+<h3>Farm Land</h3>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8">
+<h3>Sunset Farming</h3>
+</div>
+
+</div>
+</section>
+
+<section id="weather">
+<h2>🌦 Weather</h2>
+<div class="weather">
+<h3>☀ Sunny</h3>
+<p>Temperature: 31°C</p>
+<p>Humidity: 60%</p>
+<p>Good day for farming activities.</p>
+</div>
+</section>
+
+<section id="fertilizer">
+<h2>🌱 Fertilizer Information</h2>
+<div class="cards">
+<div class="card">
+<h3>Organic Fertilizer</h3>
+<p>Improves soil naturally.</p>
+</div>
+<div class="card">
+<h3>NPK Fertilizer</h3>
+<p>Boosts crop growth.</p>
+</div>
+<div class="card">
+<h3>Compost</h3>
+<p>Eco-friendly farming.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h2>🐛 Crop Disease Detection</h2>
+<div class="form-box">
+<input type="file">
+<p>Upload crop image for checking disease.</p>
+<button style="margin-top:10px;">Upload</button>
+</div>
+</section>
+
+<section>
+<h2>🛒 Seeds & Equipment Shop</h2>
+<div class="cards">
+<div class="card">
+<h3>🌾 Paddy Seeds</h3>
+<p>₹500 per bag</p>
+<button>Buy</button>
+</div>
+<div class="card">
+<h3>🚜 Tractor Rental</h3>
+<p>₹1500/day</p>
+<button>Book</button>
+</div>
+<div class="card">
+<h3>💧 Drip Irrigation Kit</h3>
+<p>₹3000</p>
+<button>Buy</button>
+</div>
+</div>
+</section>
+
+<section id="dashboard">
+<h2>📊 Farmer Dashboard</h2>
+<div class="dashboard">
+<div class="box">
+<h3>12</h3>
+<p>Total Crops</p>
+</div>
+<div class="box">
+<h3>5</h3>
+<p>Government Schemes</p>
+</div>
+<div class="box">
+<h3>20+</h3>
+<p>Farming Tips</p>
+</div>
+</div>
+</section>
+
+<section id="schemes">
+<h2>🔔 Government Schemes</h2>
+<div class="scheme">
+<h3>Rythu Bandhu</h3>
+<p>Financial support for Telangana farmers.</p>
+</div>
+<div class="scheme">
+<h3>PM Kisan</h3>
+<p>Income support scheme for farmers.</p>
+</div>
+</section>
+
+<section id="videos">
+<h2>🎥 Agriculture Videos</h2>
+<div class="video-box">
+<iframe src="https://www.youtube.com/embed/7nQ2oiVqKHw" allowfullscreen></iframe>
+</div>
+</section>
+
+<section id="contact">
+<h2>📞 Contact Support</h2>
+<div class="form-box">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<br>
+<button>Send Message</button>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Smart Farmer Help Portal | Telangana</p>
+</footer>
+
+<script>
+function searchCrops(){
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let cards = document.querySelectorAll("#crops .card");
+
+    cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        if(text.includes(input)){
+            card.style.display="block";
+        } else {
+            card.style.display="none";
+        }
+    });
+}
+
+function darkMode(){
+    document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>

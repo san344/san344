@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>Food Waste Management</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#045d3b;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+color:white;
+font-size:28px;
+font-weight:bold;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:18px;
+}
+
+.nav-links a:hover{
+color:yellow;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+position:relative;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:20px;
+color:white;
+width:90%;
+max-width:700px;
+}
+
+.overlay h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.overlay p{
+font-size:22px;
+margin-bottom:20px;
+}
+
+.btn{
+background:#00b36b;
+padding:14px 30px;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-size:20px;
+}
+
+.btn:hover{
+background:#008f56;
+}
+
+/* FEATURES */
+
+.section-title{
+text-align:center;
+font-size:40px;
+color:#045d3b;
+margin-top:50px;
+margin-bottom:30px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+padding:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+text-align:center;
+}
+
+.card-content h2{
+color:#045d3b;
+margin-bottom:10px;
+}
+
+.card-content p{
+font-size:16px;
+color:#555;
+}
+
+/* STATISTICS */
+
+.stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+padding:30px;
+}
+
+.stat-box{
+background:white;
+padding:30px;
+border-radius:20px;
+width:220px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.stat-box h1{
+color:#00b36b;
+font-size:40px;
+}
+
+/* NGO SECTION */
+
+.ngo-section{
+padding:20px;
+}
+
+.ngo-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.ngo-card{
+background:white;
+width:280px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.ngo-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.ngo-card h2{
+padding:10px;
+color:#045d3b;
+}
+
+.ngo-card p{
+padding:10px;
+color:#555;
+}
+
+/* CONTACT */
+
+.contact{
+background:#045d3b;
+color:white;
+padding:40px;
+text-align:center;
+margin-top:50px;
+}
+
+.contact h1{
+margin-bottom:20px;
+font-size:40px;
+}
+
+.contact p{
+font-size:20px;
+margin:10px;
+}
+
+/* FOOTER */
+
+.footer{
+background:black;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.overlay h1{
+font-size:40px;
+}
+
+.overlay p{
+font-size:18px;
+}
+
+.nav-links a{
+font-size:15px;
+margin:5px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo"> Save Food</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Donations</a>
+<a href="#">Statistics</a>
+<a href="#">NGOs</a>
+<a href="#">Contact</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Stop Food Waste</h1>
+
+<p>
+Share extra food and help hungry people.
+Together we can reduce food waste.
+</p>
+
+<a href="#" class="btn">Donate Food</a>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<h1 class="section-title">Website Features</h1>
+
+<div class="features">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200">
+
+<div class="card-content">
+
+<h2>Food Donation</h2>
+
+<p>
+Donate extra food to poor and hungry people easily.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg">
+
+<div class="card-content">
+
+<h2>Volunteer Support</h2>
+
+<p>
+Volunteers help collect and distribute food safely.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+
+
+<div class="card-content">
+
+<h2>Food Collection</h2>
+
+<p>
+Restaurants and events can donate leftover food.
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200">
+
+<div class="card-content">
+
+<h2>Helping Families</h2>
+
+<p>
+Provide healthy meals to families in need.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STATS -->
+
+<h1 class="section-title">Food Waste Statistics</h1>
+
+<div class="stats">
+
+<div class="stat-box">
+<h1>40%</h1>
+<p>Daily Food Waste</p>
+</div>
+
+<div class="stat-box">
+<h1>20K+</h1>
+<p>People Helped</p>
+</div>
+
+<div class="stat-box">
+<h1>500+</h1>
+<p>NGO Partners</p>
+</div>
+
+<div class="stat-box">
+<h1>1000+</h1>
+<p>Food Donations</p>
+</div>
+
+</div>
+
+<!-- NGO SECTION -->
+
+<h1 class="section-title">Partner NGOs</h1>
+
+<div class="ngo-section">
+
+<div class="ngo-container">
+
+<div class="ngo-card">
+
+<img src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=1200">
+
+<h2>Helping Hands NGO</h2>
+
+<p>
+Providing food support for poor families.
+</p>
+
+</div>
+
+<div class="ngo-card">
+
+<img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200">
+
+<h2>Food Care Foundation</h2>
+
+<p>
+Working to reduce hunger and food waste.
+</p>
+
+</div>
+
+<div class="ngo-card">
+
+
+
+<h2>Hope Charity</h2>
+  
+
+<p>
+Helping children and communities with food.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="contact">
+
+<h1>Contact Us</h1>
+
+<p>📧 savefood@gmail.com</p>
+
+<p>📞 +91 9876543210</p>
+
+<p>📍 Hyderabad, India</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<h2>🍱 Save Food Dashboard</h2>
+
+<p>Together We Can End Hunger.</p>
+
+<br>
+
+<p>© 2026 Food Waste Management Website</p>
+
+</div>
+
+</body>
+</html>

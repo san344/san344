@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hospital Management System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#f4f7fc;
+}
+
+header{
+background:#0f766e;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#115e59;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+.hero{
+height:350px;
+background:
+linear-gradient(rgba(0,0,0,0.5),
+rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3')
+center/cover;
+
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+}
+
+.container{
+width:90%;
+margin:auto;
+padding:40px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:25px;
+color:#0f766e;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:white;
+width:280px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+}
+
+.card h3{
+margin:15px 0 10px;
+}
+
+button{
+background:#0f766e;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.appointment{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+margin-top:40px;
+}
+
+.appointment input,
+.appointment select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.dashboard{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.box{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 0 10px #ccc;
+text-align:center;
+}
+
+.box h2{
+color:#0f766e;
+margin-bottom:10px;
+}
+
+footer{
+background:#0f766e;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🏥 Hospital Management System</h1>
+
+<p>Advanced Healthcare Website</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="doctor.html">Doctors</a>
+<a href="patient.html">Patients</a>
+<a href="book appointment.hrml.html">Appointments</a>
+<a href="1contact.html">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Quality Healthcare Services</h1>
+
+<p>Book appointments with expert doctors</p>
+
+
+<a href="book appointment.hrml.html"><button>
+Book Appointment
+</button></a>
+
+</section>
+
+<div class="container">
+
+<h2 class="section-title">
+👨‍⚕️ Our Doctors
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<h3>Dr. Rahul Sharma</h3>
+
+<p>Cardiologist</p>
+
+<button>
+View Profile
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+<h3>Dr. Priya Reddy</h3>
+
+<p>Neurologist</p>
+
+<button>
+View Profile
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/men/55.jpg">
+
+<h3>Dr. Arjun Kumar</h3>
+
+<p>Orthopedic</p>
+
+<button>
+View Profile
+</button>
+
+</div>
+
+</div>
+
+<div class="appointment">
+
+<h2>📅 Appointment Booking</h2>
+
+<input type="text"
+placeholder="Patient Name">
+
+<input type="email"
+placeholder="Email">
+
+<input type="date">
+
+<select>
+
+<option>Select Doctor</option>
+
+<option>Dr. Rahul Sharma</option>
+
+<option>Dr. Priya Reddy</option>
+
+<option>Dr. Arjun Kumar</option>
+
+</select>
+
+<button>
+Confirm Appointment
+</button>
+
+</div>
+
+<h2 class="section-title">
+📊 Hospital Dashboard
+</h2>
+
+<div class="dashboard">
+
+<div class="box">
+<h2>150+</h2>
+<p>Doctors</p>
+</div>
+
+<div class="box">
+<h2>1200+</h2>
+<p>Patients</p>
+</div>
+
+<div class="box">
+<h2>50+</h2>
+<p>Rooms</p>
+</div>
+
+<div class="box">
+<h2>24/7</h2>
+<p>Emergency Service</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Hospital Management System</p>
+
+</footer>
+
+</body>
+</html>

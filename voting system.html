@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Online Voting System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+    background:#f4f7fc;
+    transition:0.4s;
+}
+
+.dark{
+    background:#111;
+    color:white;
+}
+
+.dark .card,
+.dark .section-box,
+.dark .result-box{
+    background:#222;
+    color:white;
+}
+
+header{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+nav{
+    background:#162d6b;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:30px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1e3a8a;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    width:280px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+button{
+    background:#1e3a8a;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:5px;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.search-box{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.search-box input{
+    width:60%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.result-box{
+    background:white;
+    padding:20px;
+    margin-top:30px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+}
+
+.bar{
+    height:30px;
+    background:#1e3a8a;
+    margin:10px 0 20px;
+    border-radius:5px;
+    width:0%;
+    color:white;
+    text-align:center;
+    line-height:30px;
+    transition:0.5s;
+}
+
+.winner{
+    text-align:center;
+    font-size:22px;
+    color:green;
+    margin-top:20px;
+}
+
+form{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #ccc;
+    margin-top:30px;
+}
+
+form input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.features{
+    margin-top:40px;
+}
+
+footer{
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.cards{
+    flex-direction:column;
+    align-items:center;
+}
+
+.search-box input{
+    width:95%;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>🗳  Online Voting System</h1>
+
+<p>Secure Digital Election Platform</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+
+<a href="#">Candidates</a>
+
+<a href="#">Results</a>
+
+<a href="#">Features</a>
+
+<a href="#">Contact</a>
+
+<button onclick="darkMode()">
+🌙 Dark Mode
+</button>
+
+</nav>
+
+<div class="container">
+
+<div class="search-box">
+
+<input type="text"
+id="search"
+placeholder="Search Candidate..."
+onkeyup="searchCandidate()">
+
+</div>
+
+<h2 class="section-title">
+👨‍💼 Candidates
+</h2>
+
+<div class="cards" id="candidateCards">
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+<h2>Rahul Kumar</h2>
+
+<p>Party A</p>
+
+<button onclick="vote('A')">
+Vote
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/women/45.jpg">
+
+<h2>Priya Sharma</h2>
+
+<p>Party B</p>
+
+<button onclick="vote('B')">
+Vote
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://randomuser.me/api/portraits/men/55.jpg">
+
+<h2>Arjun Reddy</h2>
+
+<p>Party C</p>
+
+<button onclick="vote('C')">
+Vote
+</button>
+
+</div>
+
+</div>
+
+<div class="result-box">
+
+<h2>📊 Live Voting Results</h2>
+
+<p>Party A</p>
+<div class="bar" id="barA">0%</div>
+
+<p>Party B</p>
+<div class="bar" id="barB">0%</div>
+
+<p>Party C</p>
+<div class="bar" id="barC">0%</div>
+
+<div class="winner" id="winnerText">
+No Winner Yet
+</div>
+
+</div>
+
+<form>
+
+<h2>📝 Voter Registration</h2>
+
+<input type="text" placeholder="Full Name">
+
+<input type="text" placeholder="Voter ID">
+
+<input type="email" placeholder="Email">
+
+<button type="submit">
+Register
+</button>
+
+</form>
+
+<div class="features">
+
+<h2 class="section-title">
+🚀 Advanced Features
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🔐 OTP Verification</h3>
+<p>Secure voter login with OTP.</p>
+<button>Verify</button>
+</div>
+
+<div class="card">
+<h3>🪪 Voter ID Verification</h3>
+<p>Verify identity before voting.</p>
+<button>Check</button>
+</div>
+
+<div class="card">
+<h3>📊 Analytics Dashboard</h3>
+<p>Election statistics and charts.</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<h3>🌍 Multi Language</h3>
+<p>English, Hindi & Telugu support.</p>
+<button>Translate</button>
+</div>
+
+<div class="card">
+<h3>🔳 QR Code Entry</h3>
+<p>Quick secure voting access.</p>
+<button>Scan</button>
+</div>
+
+<div class="card">
+<h3>📄 Export PDF</h3>
+<p>Download voting reports.</p>
+<button>Export</button>
+</div>
+
+<div class="card">
+<h3>⏳ Election Countdown</h3>
+
+<button id="countBtn">
+Start Timer
+</button>
+
+<p id="timer"></p>
+
+</div>
+
+<div class="card">
+<h3>🤖 AI Fraud Detection</h3>
+<p>Detect fake and duplicate votes.</p>
+<button>Detect</button>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>© 2026 Advanced Online Voting System</p>
+
+</footer>
+
+<script>
+
+let votes = {
+A:0,
+B:0,
+C:0
+};
+
+function vote(party){
+
+votes[party]++;
+
+let total =
+votes.A + votes.B + votes.C;
+
+let percentA =
+Math.round((votes.A/total)*100);
+
+let percentB =
+Math.round((votes.B/total)*100);
+
+let percentC =
+Math.round((votes.C/total)*100);
+
+document.getElementById("barA")
+.style.width = percentA + "%";
+
+document.getElementById("barA")
+.innerHTML = percentA + "%";
+
+document.getElementById("barB")
+.style.width = percentB + "%";
+
+document.getElementById("barB")
+.innerHTML = percentB + "%";
+
+document.getElementById("barC")
+.style.width = percentC + "%";
+
+document.getElementById("barC")
+.innerHTML = percentC + "%";
+
+showWinner();
+
+}
+
+function showWinner(){
+
+let winner = "";
+
+if(votes.A > votes.B &&
+votes.A > votes.C){
+
+winner = "🏆 Rahul Kumar is Leading";
+
+}
+
+else if(votes.B > votes.A &&
+votes.B > votes.C){
+
+winner = "🏆 Priya Sharma is Leading";
+
+}
+
+else if(votes.C > votes.A &&
+votes.C > votes.B){
+
+winner = "🏆 Arjun Reddy is Leading";
+
+}
+
+else{
+
+winner = "⚖ Tie Vote";
+
+}
+
+document.getElementById("winnerText")
+.innerHTML = winner;
+
+}
+
+function searchCandidate(){
+
+let input =
+document.getElementById("search")
+.value.toLowerCase();
+
+let cards =
+document.querySelectorAll(".card");
+
+cards.forEach(card => {
+
+let text =
+card.innerText.toLowerCase();
+
+if(text.includes(input)){
+
+card.style.display = "block";
+
+}
+else{
+
+card.style.display = "none";
+
+}
+
+});
+
+}
+
+function darkMode(){
+
+document.body.classList.toggle("dark");
+
+}
+
+let count = 10;
+
+document.getElementById("countBtn")
+.onclick = function(){
+
+let timer =
+setInterval(function(){
+
+document.getElementById("timer")
+.innerHTML =
+"Election starts in " + count + " sec";
+
+count--;
+
+if(count < 0){
+
+clearInterval(timer);
+
+document.getElementById("timer")
+.innerHTML =
+"🗳 Election Started";
+
+}
+
+},1000);
+
+};
+
+</script>
+
+</body>
+</html>

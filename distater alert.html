@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disaster Alert</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+body{
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+top:0;
+width:100%;
+padding:25px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+}
+
+.logo{
+font-size:35px;
+font-weight:bold;
+color:#ff3b3b;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ff3b3b;
+}
+
+/* FULL IMAGE SECTIONS */
+
+.section{
+height:100vh;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.section::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+.content{
+position:relative;
+z-index:2;
+max-width:700px;
+padding:20px;
+}
+
+.content h1{
+font-size:80px;
+margin-bottom:20px;
+}
+
+.content p{
+font-size:26px;
+line-height:1.7;
+margin-bottom:30px;
+color:#ddd;
+}
+
+.content button{
+padding:15px 40px;
+font-size:22px;
+border:none;
+background:#ff3b3b;
+color:white;
+border-radius:40px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.content button:hover{
+transform:scale(1.1);
+}
+
+/* SECTION IMAGES */
+
+.hero{
+background:url('https://images.unsplash.com/photo-1527489377706-5bf97e608852?q=80&w=1200') center/cover fixed;
+}
+
+.flood{
+background:url('https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=1200') center/cover fixed;
+}
+
+.fire{
+background:url('https://images.unsplash.com/photo-1517638851339-4aa32003c11a?q=80&w=1200') center/cover fixed;
+}
+
+.cyclone{
+background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200') center/cover fixed;
+}
+
+/* EMERGENCY */
+
+.emergency{
+background:#111;
+padding:80px 20px;
+text-align:center;
+}
+
+.emergency h1{
+font-size:60px;
+color:#ff3b3b;
+margin-bottom:20px;
+}
+
+.emergency p{
+font-size:28px;
+line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+background:black;
+padding:25px;
+text-align:center;
+font-size:18px;
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.content h1{
+font-size:45px;
+}
+
+.content p{
+font-size:20px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+🚨 ALERT
+</div>
+
+<div class="nav-links">
+
+<a href="home distaer.html">Home</a>
+<a href="foold.html">Flood</a>
+<a href="fire.html">Fire</a>
+<a href="cyclone.html">Cyclone</a>
+<a href="emergency.html">Emergency</a>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="section hero">
+
+<div class="content">
+
+<h1>Disaster Alert</h1>
+
+<p>
+Real-time emergency alerts and safety information.
+Stay aware. Stay safe.
+</p>
+
+<button>
+Get Alerts
+</button>
+
+</div>
+
+</section>
+
+<!-- FLOOD -->
+
+<section class="section flood">
+
+<div class="content">
+
+<h1>Flood Warning</h1>
+
+<p>
+Heavy rain alerts and flood rescue updates
+for affected areas.
+</p>
+
+<button>
+View Updates
+</button>
+
+</div>
+
+</section>
+
+<!-- FIRE -->
+
+<section class="section fire">
+
+<div class="content">
+
+<h1>Fire Emergency</h1>
+
+<p>
+Emergency fire rescue operations and
+safety instructions.
+</p>
+
+<button>
+Emergency Help
+</button>
+
+</div>
+
+</section>
+
+<!-- CYCLONE -->
+
+<section class="section cyclone">
+
+<div class="content">
+
+<h1>Cyclone Alert</h1>
+
+<p>
+Track cyclone movements and stay prepared
+during storms.
+</p>
+
+<button>
+Track Cyclone
+</button>
+
+</div>
+
+</section>
+
+<!-- EMERGENCY -->
+
+<div class="emergency">
+
+<h1>📞 Emergency Numbers</h1>
+
+<p>
+Police: 100 <br>
+Ambulance: 108 <br>
+Fire Rescue: 101
+</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+🚨 Disaster Alert Website © 2026
+
+</footer>
+
+</body>
+
+</html>

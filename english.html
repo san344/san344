@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+<title>English Learning Hub</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef5ff;
+margin:0;
+text-align:center;
+}
+
+.header{
+background:#2563eb;
+color:white;
+padding:35px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+width:250px;
+border-radius:20px;
+box-shadow:0px 4px 10px gray;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+}
+
+.card h2{
+color:#2563eb;
+}
+
+button{
+background:#2563eb;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:10px;
+margin-bottom:15px;
+cursor:pointer;
+}
+
+.footer{
+background:#2563eb;
+color:white;
+padding:20px;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>📚 English Learning Hub</h1>
+
+<p>Speak • Learn • Grow</p>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+
+<h2>Vocabulary</h2>
+
+<p>Learn new English words.</p>
+
+<button onclick="vocabulary()">
+Read More
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1513258496099-48168024aec0">
+
+<h2>Grammar Tips</h2>
+
+<p>Learn grammar rules.</p>
+
+<button onclick="grammar()">
+Read More
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f">
+
+<h2>Pronunciation</h2>
+
+<p>Correct word pronunciation.</p>
+
+<button onclick="pronunciation()">
+Read More
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+
+<h2>English Quiz</h2>
+
+<p>Practice daily quiz.</p>
+
+<button onclick="quiz()">
+Read More
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6">
+
+<h2>Daily Motivation</h2>
+
+<p>Positive learning motivation.</p>
+
+<button onclick="motivation()">
+Read More
+</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+
+<h2>Daily Conversation</h2>
+
+<p>Daily speaking practice.</p>
+
+<button onclick="conversation()">
+Read More
+</button>
+
+</div>
+
+</div>
+  <div style="
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;">
+
+<div style="
+background:white;
+width:320px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;
+text-align:left;">
+
+<h2 style="color:#2563eb;">⭐ Today's Word</h2>
+
+<h1>Confident 🔊</h1>
+
+<p>అర్థం: ఆత్మవిశ్వాసం</p>
+
+<p>
+Example:
+I am confident to speak English.
+</p>
+
+</div>
+
+
+
+<div style="
+background:#f5fff5;
+width:320px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;
+text-align:left;">
+
+<h2 style="color:green;">💬 Daily Quote</h2>
+
+<h3>
+
+"The expert in anything
+was once a beginner."
+
+</h3>
+
+<p>- Helen Hayes</p>
+
+</div>
+
+</div>
+
+
+
+<div style="
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;">
+
+<div style="
+background:white;
+width:180px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;">
+
+<h2>📘</h2>
+
+<h3>Learn Anywhere</h3>
+
+<p>
+Learn English anytime, anywhere.
+</p>
+
+</div>
+
+
+
+<div style="
+background:white;
+width:180px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;">
+
+<h2>📈</h2>
+
+<h3>Improve Skills</h3>
+
+<p>
+Improve speaking, reading & writing.
+</p>
+
+</div>
+
+
+
+<div style="
+background:white;
+width:180px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;">
+
+<h2>🎯</h2>
+
+<h3>Achieve Goals</h3>
+
+<p>
+Practice daily and achieve success.
+</p>
+
+</div>
+
+
+
+<div style="
+background:white;
+width:180px;
+padding:20px;
+border-radius:20px;
+box-shadow:0px 4px 10px lightgray;">
+
+<h2>👥</h2>
+
+<h3>Join Community</h3>
+
+<p>
+Learn together and grow together.
+</p>
+
+</div>
+
+</div>
+
+<div class="footer">
+
+<h3>Designed by Laxmipriya 💙</h3>
+
+</div>
+
+<script>
+
+function vocabulary(){
+
+alert(
+"📚 VOCABULARY\n\n\
+Vocabulary ante English words learning.\n\n\
+Uses:\n\
+✔ Speaking improve\n\
+✔ Writing improve\n\
+✔ Confidence peruguthundi\n\n\
+Example:\n\
+Confident = ఆత్మవిశ్వాసం\n\
+I am confident to speak English."
+);
+
+}
+
+function grammar(){
+
+alert(
+"✍️ GRAMMAR TIPS\n\n\
+Grammar ante English sentences correct ga rayadam, maatladadam kosam rules.\n\n\
+Uses:\n\
+✔ Correct English speaking\n\
+✔ Writing improve\n\
+✔ Exams lo help\n\n\
+Rule:\n\
+He/She/It vasthe verb ki s/es add chestham.\n\n\
+Example:\n\
+She goes to school ✅\n\
+She go to school ❌"
+);
+
+}
+
+function pronunciation(){
+
+alert(
+"🗣️ PRONUNCIATION\n\n\
+Pronunciation ante English words ni correct ga పలకడం.\n\n\
+Uses:\n\
+✔ Clear speaking\n\
+✔ Communication improve\n\
+✔ Confidence peruguthundi\n\n\
+Example:\n\
+Beautiful = byoo-ti-ful\n\
+Comfortable = kum-fur-tuh-bl"
+);
+
+}
+
+function quiz(){
+
+alert(
+"❓ ENGLISH QUIZ\n\n\
+Choose correct answer:\n\n\
+She go to school ❌\n\
+She goes to school ✅\n\n\
+Practice:\n\
+I ___ learning English.\n\
+a) am ✅\n\
+b) is"
+);
+
+}
+
+function motivation(){
+
+alert(
+"🌟 DAILY MOTIVATION\n\n\
+Daily motivation ante positive ga undadam.\n\n\
+Uses:\n\
+✔ Confidence improve\n\
+✔ Positive thinking\n\
+✔ Learning easy avthundi\n\n\
+Quote:\n\
+Practice everyday.\n\
+Never stop learning."
+);
+
+}
+
+function conversation(){
+
+alert(
+"💬 DAILY CONVERSATION\n\n\
+Daily conversation ante roju English lo simple ga maatladadam.\n\n\
+Examples:\n\
+Good Morning!\n\
+How are you?\n\
+I am fine.\n\
+What are you doing?\n\
+I am studying."
+);
+
+}
+
+</script>
+
+</body>
+</html>

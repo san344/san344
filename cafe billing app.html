@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cafe Billing App</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f8fafc;
+}
+
+header{
+background:#6f4e37;
+color:white;
+padding:20px;
+text-align:center;
+font-size:32px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.container{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:25px;
+padding:30px;
+}
+
+.menu-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-content{
+padding:20px;
+text-align:center;
+}
+
+.card-content h3{
+margin-bottom:10px;
+font-size:24px;
+color:#6f4e37;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+margin:15px 0;
+color:#16a34a;
+}
+
+button{
+background:#6f4e37;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+background:#4b2e1f;
+}
+
+.bill-section{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+height:fit-content;
+position:sticky;
+top:20px;
+}
+
+.bill-section h2{
+margin-bottom:20px;
+color:#6f4e37;
+}
+
+.bill-items{
+margin-bottom:20px;
+}
+
+.bill-item{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+padding-bottom:8px;
+border-bottom:1px solid #ddd;
+}
+
+.total{
+font-size:28px;
+font-weight:bold;
+margin:20px 0;
+color:#16a34a;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:10px;
+}
+
+footer{
+background:#6f4e37;
+color:white;
+text-align:center;
+padding:18px;
+margin-top:30px;
+}
+
+@media(max-width:900px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+.bill-section{
+position:relative;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+☕ Cafe Billing App
+</header>
+
+<div class="container">
+
+<div class="menu-section">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+
+<div class="card-content">
+
+<h3>Cappuccino</h3>
+
+<p>Fresh hot coffee with creamy milk.</p>
+
+<div class="price">
+₹120
+</div>
+
+<button onclick="addItem('Cappuccino',120)">
+Add
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
+
+<div class="card-content">
+
+<h3>Cold Coffee</h3>
+
+<p>Chilled coffee with chocolate flavor.</p>
+
+<div class="price">
+₹150
+</div>
+
+<button onclick="addItem('Cold Coffee',150)">
+Add
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24">
+
+<div class="card-content">
+
+<h3>Pizza</h3>
+
+<p>Cheesy delicious cafe pizza.</p>
+
+<div class="price">
+₹250
+</div>
+
+<button onclick="addItem('Pizza',250)">
+Add
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38">
+
+<div class="card-content">
+
+<h3>Burger</h3>
+
+<p>Veg burger with crispy fries.</p>
+
+<div class="price">
+₹180
+</div>
+
+<button onclick="addItem('Burger',180)">
+Add
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05">
+
+<div class="card-content">
+
+<h3>Chocolate Cake</h3>
+
+<p>Soft creamy chocolate dessert.</p>
+
+<div class="price">
+₹200
+</div>
+
+<button onclick="addItem('Cake',200)">
+Add
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f">
+
+<div class="card-content">
+
+<h3>French Fries</h3>
+
+<p>Crispy spicy potato fries.</p>
+
+<div class="price">
+₹100
+</div>
+
+<button onclick="addItem('Fries',100)">
+Add
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bill-section">
+
+<h2>
+🧾 Customer Bill
+</h2>
+
+<input type="text"
+placeholder="Customer Name">
+
+<div class="bill-items"
+id="billItems">
+
+<p>No items added</p>
+
+</div>
+
+<div class="total"
+id="total">
+
+Total: ₹0
+
+</div>
+
+<button onclick="generateBill()">
+Generate Bill
+</button>
+
+<h3 id="message"
+style="margin-top:20px;color:green;">
+</h3>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+© 2026 Cafe Billing Management System
+</p>
+
+</footer>
+
+<script>
+
+let total = 0;
+
+function addItem(name,price){
+
+let billItems =
+document.getElementById("billItems");
+
+if(billItems.innerHTML.includes("No items added")){
+
+billItems.innerHTML = "";
+
+}
+
+let item =
+document.createElement("div");
+
+item.classList.add("bill-item");
+
+item.innerHTML =
+`<span>${name}</span>
+<span>₹${price}</span>`;
+
+billItems.appendChild(item);
+
+total += price;
+
+document.getElementById("total")
+.innerHTML =
+"Total: ₹" + total;
+
+}
+
+function generateBill(){
+
+document.getElementById("message")
+.innerHTML =
+"✅ Bill Generated Successfully";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+<title>Science Learning Hub</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#eef3ff;
+}
+
+.navbar{
+background:#081c6b;
+color:white;
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:10px;
+}
+
+.hero{
+background:linear-gradient(#081c6b,#4c1d95);
+color:white;
+padding:50px 20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+align-items:center;
+}
+
+.hero-text{
+max-width:450px;
+}
+
+.hero-text h1{
+font-size:45px;
+}
+
+.hero button{
+background:#7c3aed;
+color:white;
+border:none;
+padding:15px 25px;
+border-radius:10px;
+font-size:18px;
+}
+
+.hero img{
+width:320px;
+border-radius:20px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+width:280px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0px 4px 10px lightgray;
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:170px;
+object-fit:cover;
+}
+
+.card button{
+background:#4c1d95;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+margin:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+🧪 Science Learning Hub
+</div>
+
+<div class="menu">
+<a href="">Home</a>
+<a href="">Physics</a>
+<a href="">Chemistry</a>
+<a href="">Biology</a>
+<a href="">Quiz</a>
+</div>
+
+</div>
+
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Explore Science Learning Hub</h1>
+
+<p>
+
+Learn Physics, Chemistry, Biology,
+Experiments and Facts in a fun way.
+
+</p>
+
+<button>
+
+Start Learning
+
+</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b2341">
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb">
+
+<h2>⚛️ Physics</h2>
+
+<p>
+Learn Motion, Force, Energy, Light and Sound.
+</p>
+
+<button onclick="physics()">
+Read More
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6">
+
+<h2>🧪 Chemistry</h2>
+
+<p>
+Explore Acids, Bases, Reactions and Elements.
+</p>
+
+<button onclick="chemistry()">
+Read More
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8">
+
+<h2>🌱 Biology</h2>
+
+<p>
+Learn Plants, Human Body, Cells and Animals.
+</p>
+
+<button onclick="biology()">
+Read More
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31">
+
+<h2>🔬 Experiments</h2>
+
+<p>
+Try simple and interesting science experiments.
+</p>
+
+<button onclick="experiment()">
+Read More
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1508780709619-79562169bc64">
+
+<h2>📚 Science Facts</h2>
+
+<p>
+Amazing and interesting science facts.
+</p>
+
+<button onclick="facts()">
+Read More
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+
+<h2>❓ Quiz Zone</h2>
+
+<p>
+Test your knowledge with quizzes.
+</p>
+
+<button onclick="quiz()">
+Read More
+</button>
+
+</div>
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<h2>⭐ Today's Fact</h2>
+
+<h1>Water 💧</h1>
+
+<p>
+
+Water boils at 100°C.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💬 Daily Quote</h2>
+
+<h3>
+
+"Science is magic that works."
+
+</h3>
+
+<p>
+
+Learn • Explore • Discover
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>📘 Learn Anywhere</h2>
+
+<p>
+
+Learn science anytime and anywhere.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>📈 Improve Skills</h2>
+
+<p>
+
+Improve science knowledge and thinking skills.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🎯 Achieve Goals</h2>
+
+<p>
+
+Practice science daily and achieve success.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>👥 Join Community</h2>
+
+<p>
+
+Learn together and grow together.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div style="
+background:#081c6b;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:20px;">
+
+<h3>
+
+Designed by Laxmipriya 💜
+
+</h3>
+
+</div>
+
+
+
+<script>
+
+function physics(){
+
+alert(
+
+"⚛️ PHYSICS\n\n\
+Physics ante motion, force, light, sound study.\n\n\
+Examples:\n\
+✔ Gravity\n\
+✔ Electricity\n\
+✔ Energy"
+
+);
+
+}
+
+
+
+function chemistry(){
+
+alert(
+
+"🧪 CHEMISTRY\n\n\
+Chemistry ante substances study.\n\n\
+Topics:\n\
+✔ Acids\n\
+✔ Bases\n\
+✔ Reactions"
+
+);
+
+}
+
+
+
+function biology(){
+
+alert(
+
+"🌱 BIOLOGY\n\n\
+Biology ante living organisms study.\n\n\
+Examples:\n\
+✔ Plants\n\
+✔ Human Body\n\
+✔ Cells"
+
+);
+
+}
+
+
+
+function experiment(){
+
+alert(
+
+"🔬 EXPERIMENTS\n\n\
+Easy Experiment:\n\
+Baking Soda + Vinegar mix chesthe bubbles vasthai."
+
+);
+
+}
+
+
+
+function facts(){
+
+alert(
+
+"📚 SCIENCE FACTS\n\n\
+Sun is a star.\n\
+Human body lo 206 bones untayi."
+
+);
+
+}
+
+
+
+function quiz(){
+
+alert(
+
+"❓ QUIZ ZONE\n\n\
+Water formula enti?\n\n\
+a) CO2\n\
+b) H2O ✅"
+
+);
+
+}
+
+</script>
+
+</body>
+</html>

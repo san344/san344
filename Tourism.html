@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>India Tourism</title>
+
+    <style>
+
+        {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background-color:#f0f8ff;
+        }
+
+        /* Navbar */
+
+        nav{
+            background-color:#008080;
+            color:white;
+            padding:15px;
+            text-align:center;
+        }
+
+        nav h1{
+            font-size:35px;
+        }
+
+        .hero{
+            background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da');
+            height:350px;
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+            text-align:center;
+        }
+
+        .hero h2{
+            font-size:45px;
+            background:rgba(0,0,0,0.5);
+            padding:15px;
+            border-radius:10px;
+        }
+
+        .places{
+            padding:40px;
+            text-align:center;
+        }
+
+        .places h2{
+            margin-bottom:30px;
+            color:#008080;
+            font-size:35px;
+        }
+
+        .card-container{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:white;
+            width:300px;
+            border-radius:10px;
+            box-shadow:0 4px 8px gray;
+            overflow:hidden;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:scale(1.05);
+        }
+
+        .card img{
+            width:100%;
+            height:200px;
+        }
+
+        .card h3{
+            margin:15px 0;
+            color:#333;
+        }
+
+        .card p{
+            padding:0 15px 20px;
+            color:#555;
+        }
+
+        footer{
+            background:#008080;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <nav>
+        <h1>India Tourism</h1>
+    </nav>
+
+    <section class="hero">
+        <h2>Explore Beautiful Places in India</h2>
+    </section>
+
+    <section class="places">
+
+        <h2>Famous Tourist Places</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523" alt="Taj Mahal">
+                <h3>Taj Mahal</h3>
+                <p>The Taj Mahal is one of the seven wonders of the world located in Agra.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d" alt="Charminar">
+                <h3>Charminar</h3>
+                <p>Charminar is a famous historical monument located in Hyderabad.</p>
+            </div>
+
+                <div class="card">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Goa Beach">
+                <h3>Goa Beach</h3>
+                <p>Goa is famous for its beautiful beaches and tourist attractions.</p>
+            </div>
+           
+        </div>
+
+    </section>
+
+    <footer>
+        <p> 2026 India Tourism Website | Created by Student</p>
+    </footer>
+
+</body>
+</html>

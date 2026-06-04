@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Motivation Quotes App</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(135deg,#7c3aed,#2563eb);
+overflow:hidden;
+}
+
+.container{
+width:420px;
+background:white;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+animation:fadeIn 1s ease;
+}
+
+h1{
+font-size:36px;
+margin-bottom:25px;
+color:#2563eb;
+}
+
+.quote-box{
+background:#f1f5f9;
+padding:30px;
+border-radius:20px;
+min-height:220px;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.quote{
+font-size:22px;
+font-weight:500;
+color:#111827;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.author{
+font-size:18px;
+font-weight:bold;
+color:#7c3aed;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+button{
+padding:14px 24px;
+border:none;
+border-radius:50px;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+font-weight:600;
+color:white;
+}
+
+.new-btn{
+background:#2563eb;
+}
+
+.copy-btn{
+background:#16a34a;
+}
+
+.share-btn{
+background:#f59e0b;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+.message{
+margin-top:20px;
+color:#16a34a;
+font-weight:bold;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+✨ Motivation Quotes
+</h1>
+
+<div class="quote-box">
+
+<div class="quote" id="quote">
+
+"Success doesn’t come from what you do occasionally, it comes from what you do consistently."
+
+</div>
+
+<div class="author" id="author">
+
+— Marie Forleo
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button class="new-btn"
+onclick="newQuote()">
+
+New Quote
+
+</button>
+
+<button class="copy-btn"
+onclick="copyQuote()">
+
+Copy
+
+</button>
+
+<button class="share-btn"
+onclick="shareQuote()">
+
+Share
+
+</button>
+
+</div>
+
+<div class="message"
+id="message">
+
+</div>
+
+</div>
+
+<script>
+
+const quotes = [
+
+{
+quote:"Push yourself because no one else is going to do it for you.",
+author:"Unknown"
+},
+
+{
+quote:"Dream big and dare to fail.",
+author:"Norman Vaughan"
+},
+
+{
+quote:"Your future is created by what you do today.",
+author:"Robert Kiyosaki"
+},
+
+{
+quote:"Success is not for the lazy.",
+author:"Unknown"
+},
+
+{
+quote:"Do something today that your future self will thank you for.",
+author:"Sean Patrick Flanery"
+},
+
+{
+quote:"Believe you can and you're halfway there.",
+author:"Theodore Roosevelt"
+},
+
+{
+quote:"Great things never come from comfort zones.",
+author:"Unknown"
+},
+
+{
+quote:"Stay positive, work hard, make it happen.",
+author:"Unknown"
+},
+
+{
+quote:"The harder you work for something, the greater you'll feel when you achieve it.",
+author:"Unknown"
+},
+
+{
+quote:"Don’t stop until you’re proud.",
+author:"Unknown"
+},
+
+{
+quote:"Small steps every day lead to big results.",
+author:"Unknown"
+},
+
+{
+quote:"Difficult roads often lead to beautiful destinations.",
+author:"Zig Ziglar"
+},
+
+{
+quote:"Success starts with self-discipline.",
+author:"Unknown"
+},
+
+{
+quote:"Wake up with determination. Go to bed with satisfaction.",
+author:"Unknown"
+},
+
+{
+quote:"You are stronger than you think.",
+author:"Unknown"
+},
+
+{
+quote:"Never give up on a dream just because of the time it will take.",
+author:"Earl Nightingale"
+},
+
+{
+quote:"Be fearless in the pursuit of what sets your soul on fire.",
+author:"Jennifer Lee"
+},
+
+{
+quote:"The secret of getting ahead is getting started.",
+author:"Mark Twain"
+},
+
+{
+quote:"Success is the sum of small efforts repeated daily.",
+author:"Robert Collier"
+},
+
+{
+quote:"Your limitation—it’s only your imagination.",
+author:"Unknown"
+},
+
+{
+quote:"Work hard in silence. Let success make the noise.",
+author:"Frank Ocean"
+},
+
+{
+quote:"Discipline is choosing between what you want now and what you want most.",
+author:"Abraham Lincoln"
+},
+
+{
+quote:"If you can dream it, you can do it.",
+author:"Walt Disney"
+},
+
+{
+quote:"Every accomplishment starts with the decision to try.",
+author:"John F. Kennedy"
+},
+
+{
+quote:"Don’t wait for opportunity. Create it.",
+author:"George Bernard Shaw"
+}
+
+];
+
+function newQuote(){
+
+let random =
+Math.floor(Math.random() * quotes.length);
+
+document.getElementById("quote")
+.innerHTML =
+`"${quotes[random].quote}"`;
+
+document.getElementById("author")
+.innerHTML =
+"— " + quotes[random].author;
+
+document.getElementById("message")
+.innerHTML = "";
+
+}
+
+function copyQuote(){
+
+let text =
+document.getElementById("quote").innerText;
+
+navigator.clipboard.writeText(text);
+
+document.getElementById("message")
+.innerHTML =
+"✅ Quote Copied Successfully";
+
+}
+
+function shareQuote(){
+
+let text =
+document.getElementById("quote").innerText;
+
+if(navigator.share){
+
+navigator.share({
+
+title:"Motivation Quote",
+text:text
+
+});
+
+}else{
+
+document.getElementById("message")
+.innerHTML =
+"❌ Sharing not supported";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

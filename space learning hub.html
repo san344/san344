@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+<title>Space Learning Hub</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0a1235;
+}
+
+.navbar{
+background:#111c55;
+color:white;
+padding:18px;
+text-align:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+color:#9ec5ff;
+}
+
+.menu{
+margin-top:10px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:18px;
+}
+
+.hero{
+background:#16245f;
+text-align:center;
+padding:40px 20px;
+color:white;
+}
+
+.hero h1{
+font-size:50px;
+color:#9ec5ff;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero button{
+background:#5865f2;
+color:white;
+border:none;
+padding:14px 25px;
+border-radius:10px;
+font-size:18px;
+}
+
+.hero img{
+width:320px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:25px;
+}
+
+.card{
+background:#111c55;
+width:280px;
+border-radius:20px;
+overflow:hidden;
+text-align:center;
+box-shadow:0px 4px 10px #000;
+color:white;
+padding-bottom:15px;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card h2{
+color:#9ec5ff;
+}
+
+.card button{
+background:#5865f2;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+margin:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+🌌 Space Learning Hub
+</div>
+
+<div class="menu">
+
+<a href="">Home</a>
+<a href="">Planets</a>
+<a href="">Stars</a>
+<a href="">Quiz</a>
+<a href="">Contact</a>
+
+</div>
+
+</div>
+
+
+
+<div class="hero">
+
+<h1>
+
+Explore Space 🚀
+
+</h1>
+
+<p>
+
+Learn about planets, stars,
+galaxies and amazing space facts.
+
+</p>
+
+<button>
+
+Start Learning
+
+</button>
+
+<br>
+
+<img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa">
+
+</div><div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1614728263952-84ea256f9679">
+
+<h2>🪐 Planets</h2>
+
+<p>
+
+Learn about Mercury, Venus,
+Earth, Mars and other planets.
+
+</p>
+
+<button onclick="planets()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564">
+
+<h2>⭐ Stars</h2>
+
+<p>
+
+Discover stars, sunlight
+and star life cycle.
+
+</p>
+
+<button onclick="stars()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca">
+
+<h2>🌍 Earth</h2>
+
+<p>
+
+Learn about Earth,
+oceans and atmosphere.
+
+</p>
+
+<button onclick="earth()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1464802686167-b939a6910659">
+
+<h2>🌌 Galaxies</h2>
+
+<p>
+
+Explore galaxies and
+the Milky Way.
+
+</p>
+
+<button onclick="galaxy()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516849841032-87cbac4d88f7">
+
+<h2>🚀 Space Missions</h2>
+
+<p>
+
+Learn about NASA,
+ISRO and missions.
+
+</p>
+
+<button onclick="mission()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31">
+
+<h2>❓ Space Quiz</h2>
+
+<p>
+
+Test your space
+knowledge.
+
+</p>
+
+<button onclick="quiz()">
+
+Read More
+
+</button>
+
+</div>
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<h2>⭐ Today's Space Fact</h2>
+
+<h1>🌍 Earth</h1>
+
+<p>
+
+Earth is the only planet
+known to support life.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💬 Daily Quote</h2>
+
+<h3>
+
+"The sky is not the limit,
+it's only the beginning."
+
+</h3>
+
+<p>
+
+Keep Exploring 🚀
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div style="
+background:#111c55;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:20px;">
+
+<h3>
+
+Designed by Laxmipriya 💙
+
+</h3>
+
+</div>
+
+
+
+<script>
+
+function planets(){
+
+alert(
+
+"🪐 PLANETS\n\n\
+Planets ante Sun chuttu tirige objects.\n\n\
+Examples:\n\
+✔ Mercury\n\
+✔ Venus\n\
+✔ Earth\n\
+✔ Mars"
+
+);
+
+}
+
+
+
+function stars(){
+
+alert(
+
+"⭐ STARS\n\n\
+Stars ante huge hot gas balls.\n\n\
+Sun kuda oka star."
+
+);
+
+}
+
+
+
+function earth(){
+
+alert(
+
+"🌍 EARTH\n\n\
+Earth mana planet.\n\n\
+Water, air, life Earth meedha untayi."
+
+);
+
+}
+
+
+
+function galaxy(){
+
+alert(
+
+"🌌 GALAXIES\n\n\
+Galaxy ante stars, planets, gas collection.\n\n\
+Mana galaxy = Milky Way."
+
+);
+
+}
+
+
+
+function mission(){
+
+alert(
+
+"🚀 SPACE MISSIONS\n\n\
+NASA & ISRO space missions conduct chesthayi.\n\n\
+Examples:\n\
+✔ Chandrayaan\n\
+✔ Mangalyaan"
+
+);
+
+}
+
+
+
+function quiz(){
+
+alert(
+
+"❓ SPACE QUIZ\n\n\
+Red Planet enti?\n\n\
+a) Mars ✅\n\
+b) Earth"
+
+);
+
+}
+
+</script>
+
+</body>
+</html>

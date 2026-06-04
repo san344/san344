@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+<title>Glow Beauty & Skincare</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#fff5f8;
+}
+
+.navbar{
+background:#ff5c93;
+color:white;
+padding:18px;
+text-align:center;
+}
+
+.menu{
+margin-top:10px;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:8px;
+font-size:18px;
+display:inline-block;
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+margin:10px;
+font-size:18px;
+}
+
+.hero{
+background:linear-gradient(#ffd6e7,#ffeef5);
+padding:40px 20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-around;
+align-items:center;
+text-align:center;
+}
+}
+
+.hero-text{
+max-width:450px;
+}
+
+.hero-text h1{
+font-size:48px;
+color:#e91e63;
+}
+
+.hero-text p{
+font-size:20px;
+}
+
+.hero button{
+background:#ff5c93;
+color:white;
+border:none;
+padding:14px 25px;
+border-radius:10px;
+font-size:18px;
+}
+
+.hero img{
+width:320px;
+border-radius:20px;
+}
+
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:white;
+width:280px;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0px 4px 10px lightgray;
+text-align:center;
+padding-bottom:15px;
+
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card h2{
+color:#e91e63;
+}
+  .card p{
+padding:0 15px;
+font-size:17px;
+line-height:26px;
+color:#444;
+}
+
+.card button{
+background:#ff5c93;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+margin:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+🌸 Glow Beauty Hub
+</div>
+
+<div class="menu">
+
+<a href="" onclick="home()">
+Home
+</a>
+
+<a href="" onclick="skin()">
+Skincare
+</a>
+
+<a href="" onclick="tipss()">
+Tips
+</a>
+
+<a href="" onclick="contact()">
+Contact
+</a>
+
+</div>
+
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Healthy Skin, Happy You 💖
+
+</h1>
+
+<p>
+
+Simple skincare steps can make
+your skin beautiful.
+
+</p>
+
+<button>
+
+Start Beauty Care
+
+</button>
+
+</div>
+
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883">
+
+<h2>🧴 Face Care</h2>
+
+<p>
+
+Cleansing, toning and caring
+for healthy glowing skin.
+
+</p>
+
+<button onclick="facecare()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b">
+
+<h2>🌿 Natural Care</h2>
+
+<p>
+
+Natural ingredients for
+clean and beautiful skin.
+
+</p>
+
+<button onclick="natural()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+
+<h2>☀️ Sun Protection</h2>
+
+<p>
+
+Protect your skin from
+harmful UV rays.
+
+</p>
+
+<button onclick="sun()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1612817288484-6f916006741a">
+
+<h2>💧 Moisturizer</h2>
+
+<p>
+
+Keep your skin soft,
+smooth and hydrated.
+
+</p>
+
+<button onclick="moisture()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15">
+
+<h2>🌙 Night Routine</h2>
+
+<p>
+
+Night care routine for
+fresh and healthy skin.
+
+</p>
+
+<button onclick="night()">
+
+Read More
+
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
+
+<h2>🍎 Healthy Skin Tips</h2>
+
+<p>
+
+Good food and habits
+for healthy glowing skin.
+
+</p>
+
+<button onclick="tips()">
+
+Read More
+
+</button>
+
+</div>
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<h2>⭐ Today's Tip</h2>
+
+<h1>💧 Drink Water</h1>
+
+<p>
+
+Drink enough water daily
+for glowing skin.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>💬 Daily Quote</h2>
+
+<h3>
+
+"Healthy skin starts with
+healthy habits."
+
+</h3>
+
+<p>
+
+Glow naturally ✨
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div style="
+background:#ff5c93;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:20px;">
+
+<h3>
+
+Designed by Laxmipriya 💗
+
+</h3>
+
+</div>
+
+
+
+<script>
+
+function facecare(){
+
+alert(
+
+"🧴 FACE CARE\n\n\
+Face care ante skin clean ga maintain cheyadam.\n\n\
+Tips:\n\
+✔ Face wash use cheyyali\n\
+✔ Clean water tho face wash cheyyali\n\
+✔ Daily skin care routine follow avvali"
+
+);
+
+}
+
+
+
+function natural(){
+
+alert(
+
+"🌿 NATURAL CARE\n\n\
+Natural ingredients use chesi skin care cheyyadam.\n\n\
+Examples:\n\
+✔ Aloe Vera\n\
+✔ Turmeric\n\
+✔ Honey"
+
+);
+
+}
+
+
+
+function sun(){
+
+alert(
+
+"☀️ SUN PROTECTION\n\n\
+Sun rays nundi skin ni protect cheyyali.\n\n\
+Tips:\n\
+✔ Sunscreen use cheyyali\n\
+✔ Cap / Umbrella use cheyyachu"
+
+);
+
+}
+
+
+
+function moisture(){
+
+alert(
+
+"💧 MOISTURIZER\n\n\
+Moisturizer skin ni soft ga, hydrated ga unchutundi.\n\n\
+Daily use cheyyadam manchidi."
+
+);
+
+}
+
+
+
+function night(){
+
+alert(
+
+"🌙 NIGHT ROUTINE\n\n\
+Night time skin care important.\n\n\
+✔ Face clean cheyyali\n\
+✔ Moisturizer apply cheyyali"
+
+);
+
+}
+
+
+
+function tips(){
+
+alert(
+
+"🍎 HEALTHY SKIN TIPS\n\n\
+✔ Fruits tinandi\n\
+✔ Water ekkuva tagandi\n\
+✔ Proper sleep undali"
+
+);
+
+}
+function home(){
+
+alert(
+
+"🏠 HOME\n\n\
+Welcome to Glow Beauty Hub 💖\n\n\
+Learn skincare tips, beauty care and healthy habits."
+
+);
+
+}
+
+function skin(){
+
+alert(
+
+"🌸 SKINCARE\n\n\
+Face Care\n\
+Moisturizer\n\
+Sun Protection\n\
+Natural Care"
+
+);
+
+}
+
+function tipss(){
+
+alert(
+
+"✨ TIPS\n\n\
+✔ Water tagandi\n\
+✔ Healthy food tinandi\n\
+✔ Proper sleep undali"
+
+);
+
+}
+
+function contact(){
+
+alert(
+
+"📞 CONTACT\n\n\
+Glow Beauty Hub\n\
+Email: beauty@gmail.com"
+
+);
+
+}
+</script>
+
+</body>
+</html>

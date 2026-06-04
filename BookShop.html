@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Book Shop</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #4b0082;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: yellow;
+    }
+
+    .banner {
+      background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .books {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .book-card {
+      background-color: white;
+      width: 220px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px gray;
+      padding: 15px;
+    }
+
+    .book-card img {
+      width: 100%;
+      height: 250px;
+      border-radius: 10px;
+    }
+
+    .book-card h3 {
+      color: #4b0082;
+    }
+
+    .book-card p {
+      font-size: 16px;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    button {
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #6a0dad;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bright Book Shop</h1>
+    <p>Best Books for Students</p>
+  </header>
+
+  <nav>
+    <a href="home">Home</a>
+    <a href="books">Books</a>
+    <a href="offers">Offers</a>
+    <a href="contact">Contact</a>
+  </nav>
+
+  <div class="banner">
+    Welcome to Our Book Shop
+  </div>
+
+  <div class="container">
+    <h2>Popular Books</h2>
+
+    <div class="books">
+
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f" alt="Book">
+        <h3>English Grammar</h3>
+        <p>Learn grammar easily.</p>
+        <p class="price">₹250</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book">
+        <h3>Mathematics</h3>
+        <p>Improve your math skills.</p>
+        <p class="price">₹300</p>
+        <button>Buy Now</button>
+      </div>
+
+      <div class="book-card">
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353" alt="Book">
+        <h3>Science Book</h3>
+        <p>Interesting science lessons.</p>
+        <p class="price">₹280</p>
+        <button>Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Bright Book Shop </p>
+  </footer>
+
+</body>
+</html>

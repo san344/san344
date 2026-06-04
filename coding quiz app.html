@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coding Quiz App</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to right,#8e2de2,#4a00e0);
+overflow:hidden;
+padding:20px;
+}
+
+.container{
+width:100%;
+max-width:650px;
+background:white;
+border-radius:25px;
+padding:40px;
+box-shadow:0 0 30px rgba(0,0,0,0.3);
+animation:fadeIn 1s;
+}
+
+.start-screen,
+.quiz-screen,
+.result-screen{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+h1{
+text-align:center;
+color:#4a00e0;
+margin-bottom:25px;
+font-size:35px;
+}
+
+input{
+width:100%;
+padding:15px;
+border-radius:12px;
+border:2px solid #ddd;
+font-size:16px;
+margin-bottom:20px;
+outline:none;
+}
+
+button{
+padding:14px 30px;
+border:none;
+border-radius:50px;
+background:linear-gradient(to right,#8e2de2,#4a00e0);
+color:white;
+font-size:17px;
+cursor:pointer;
+transition:0.3s;
+font-weight:600;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.center{
+text-align:center;
+}
+
+.question-box{
+margin-bottom:25px;
+}
+
+.question{
+font-size:24px;
+font-weight:600;
+margin-bottom:20px;
+color:#111827;
+}
+
+.option{
+background:#f1f5f9;
+padding:15px;
+margin:12px 0;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+border:2px solid transparent;
+}
+
+.option:hover{
+background:#ddd6fe;
+border-color:#4a00e0;
+}
+
+.correct{
+background:#22c55e !important;
+color:white;
+}
+
+.wrong{
+background:#ef4444 !important;
+color:white;
+}
+
+.top-bar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.timer{
+background:#4a00e0;
+color:white;
+padding:10px 20px;
+border-radius:50px;
+font-weight:bold;
+}
+
+.progress{
+height:12px;
+background:#ddd;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:30px;
+}
+
+.progress-bar{
+height:100%;
+width:0%;
+background:linear-gradient(to right,#8e2de2,#4a00e0);
+transition:0.3s;
+}
+
+.result-screen h2{
+font-size:45px;
+color:#4a00e0;
+margin-bottom:15px;
+}
+
+.result-screen p{
+font-size:22px;
+margin-bottom:25px;
+}
+
+.score-circle{
+width:150px;
+height:150px;
+border-radius:50%;
+background:linear-gradient(to right,#8e2de2,#4a00e0);
+display:flex;
+justify-content:center;
+align-items:center;
+margin:20px auto;
+color:white;
+font-size:40px;
+font-weight:bold;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(30px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+padding:25px;
+}
+
+.question{
+font-size:20px;
+}
+
+h1{
+font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="start-screen active">
+
+<h1>💻 Coding Quiz App</h1>
+
+<input type="text"
+id="username"
+placeholder="Enter Your Name">
+
+<div class="center">
+
+<button onclick="startQuiz()">
+Start Quiz
+</button>
+
+</div>
+
+</div>
+
+<div class="quiz-screen">
+
+<div class="top-bar">
+
+<h3 id="question-number">
+Question 1
+</h3>
+
+<div class="timer" id="timer">
+20s
+</div>
+
+</div>
+
+<div class="progress">
+
+<div class="progress-bar" id="progress-bar"></div>
+
+</div>
+
+<div class="question-box">
+
+<div class="question" id="question">
+Question
+</div>
+
+<div id="options"></div>
+
+</div>
+
+<div class="center">
+
+<button onclick="nextQuestion()">
+Next Question
+</button>
+
+</div>
+
+</div>
+
+<div class="result-screen center">
+
+<h2>🎉 Quiz Completed</h2>
+
+<div class="score-circle" id="score-circle">
+0%
+</div>
+
+<p id="final-score">
+You scored 0 out of 5
+</p>
+
+<button onclick="restartQuiz()">
+Restart Quiz
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+const quizData = [
+
+{
+question:"Which language is used for web styling?",
+options:["HTML","CSS","Python","C++"],
+answer:"CSS"
+},
+
+{
+question:"Which tag is used for JavaScript?",
+options:["<script>","<js>","<javascript>","<code>"],
+answer:"<script>"
+},
+
+{
+question:"Which company developed Java?",
+options:["Microsoft","Sun Microsystems","Google","Apple"],
+answer:"Sun Microsystems"
+},
+
+{
+question:"Which symbol is used for comments in JavaScript?",
+options:["//","<!-- -->","#","**"],
+answer:"//"
+},
+
+{
+question:"Which HTML tag is used for images?",
+options:["<img>","<image>","<pic>","<photo>"],
+answer:"<img>"
+}
+
+];
+
+let currentQuestion = 0;
+let score = 0;
+let timer = 20;
+let interval;
+
+function startQuiz(){
+
+const name =
+document.getElementById("username").value;
+
+if(name === ""){
+
+alert("Please enter your name");
+return;
+
+}
+
+document.querySelector(".start-screen")
+.classList.remove("active");
+
+document.querySelector(".quiz-screen")
+.classList.add("active");
+
+loadQuestion();
+
+startTimer();
+
+}
+
+function loadQuestion(){
+
+const questionData =
+quizData[currentQuestion];
+
+document.getElementById("question")
+.innerHTML =
+questionData.question;
+
+document.getElementById("question-number")
+.innerHTML =
+"Question " + (currentQuestion + 1);
+
+const optionsContainer =
+document.getElementById("options");
+
+optionsContainer.innerHTML = "";
+
+questionData.options.forEach(option => {
+
+const div =
+document.createElement("div");
+
+div.classList.add("option");
+
+div.innerHTML = option;
+
+div.onclick = () => selectOption(div,option);
+
+optionsContainer.appendChild(div);
+
+});
+
+document.getElementById("progress-bar")
+.style.width =
+((currentQuestion)/quizData.length)*100 + "%";
+
+}
+
+function selectOption(element,selected){
+
+const answer =
+quizData[currentQuestion].answer;
+
+const options =
+document.querySelectorAll(".option");
+
+options.forEach(option => {
+
+option.style.pointerEvents = "none";
+
+if(option.innerHTML === answer){
+
+option.classList.add("correct");
+
+}
+
+});
+
+if(selected === answer){
+
+score++;
+
+}else{
+
+element.classList.add("wrong");
+
+}
+
+}
+
+function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < quizData.length){
+
+loadQuestion();
+
+resetTimer();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function startTimer(){
+
+interval = setInterval(() => {
+
+timer--;
+
+document.getElementById("timer")
+.innerHTML = timer + "s";
+
+if(timer === 0){
+
+nextQuestion();
+
+resetTimer();
+
+}
+
+},1000);
+
+}
+
+function resetTimer(){
+
+clearInterval(interval);
+
+timer = 20;
+
+document.getElementById("timer")
+.innerHTML = timer + "s";
+
+startTimer();
+
+}
+
+function showResult(){
+
+clearInterval(interval);
+
+document.querySelector(".quiz-screen")
+.classList.remove("active");
+
+document.querySelector(".result-screen")
+.classList.add("active");
+
+document.getElementById("final-score")
+.innerHTML =
+"You scored " + score + " out of " + quizData.length;
+
+const percent =
+(score / quizData.length) * 100;
+
+document.getElementById("score-circle")
+.innerHTML =
+percent + "%";
+
+}
+
+function restartQuiz(){
+
+location.reload();
+
+}
+
+</script>
+
+</body>
+</html>

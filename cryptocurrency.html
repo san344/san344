@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Crypto Currency Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+}
+
+.sidebar{
+position:fixed;
+top:0;
+left:0;
+width:240px;
+height:100vh;
+background:#111827;
+padding:30px 20px;
+overflow:auto;
+}
+
+.logo{
+font-size:32px;
+font-weight:bold;
+text-align:center;
+margin-bottom:40px;
+color:#38bdf8;
+}
+
+.sidebar a{
+display:block;
+text-decoration:none;
+color:white;
+padding:15px;
+margin:10px 0;
+border-radius:12px;
+transition:0.3s;
+}
+
+.sidebar a:hover{
+background:#38bdf8;
+}
+
+.main{
+margin-left:240px;
+padding:30px;
+}
+
+section{
+margin-bottom:60px;
+}
+
+.title{
+font-size:38px;
+margin-bottom:30px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h2{
+margin-bottom:15px;
+font-size:28px;
+}
+
+.price{
+font-size:32px;
+font-weight:bold;
+margin:10px 0;
+}
+
+.green{
+color:#22c55e;
+}
+
+.red{
+color:#ef4444;
+}
+
+.table-box{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#334155;
+padding:15px;
+}
+
+table td{
+padding:15px;
+text-align:center;
+border-bottom:1px solid #334155;
+}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+color:white;
+font-weight:bold;
+}
+
+.buy{
+background:#22c55e;
+}
+
+.sell{
+background:#ef4444;
+}
+
+.wallet-box{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.wallet{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+}
+
+.progress{
+height:12px;
+background:#334155;
+border-radius:20px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.bar{
+height:100%;
+background:#38bdf8;
+width:80%;
+}
+
+.coin-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.coin-card{
+background:#1e293b;
+padding:25px;
+border-radius:20px;
+text-align:center;
+}
+
+.coin-card img{
+width:80px;
+height:80px;
+object-fit:cover;
+border-radius:50%;
+margin-bottom:15px;
+}
+
+.news-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.news{
+background:#1e293b;
+border-radius:20px;
+overflow:hidden;
+}
+
+.news img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.news-content{
+padding:20px;
+}
+
+.analytics{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.analytics-card{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.settings-box{
+background:#1e293b;
+padding:30px;
+border-radius:20px;
+max-width:700px;
+}
+
+.settings-box input{
+width:100%;
+padding:15px;
+margin:15px 0;
+border:none;
+border-radius:12px;
+background:#334155;
+color:white;
+}
+
+footer{
+background:#111827;
+padding:20px;
+text-align:center;
+border-radius:20px;
+margin-top:40px;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.main{
+margin-left:0;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+₿ CryptoX
+</div>
+
+<a href="#dashboard">🏠 Dashboard</a>
+<a href="#market">📈 Market</a>
+<a href="#wallet">💰 Wallet</a>
+<a href="#coins">🪙 Coins</a>
+<a href="#news">📰 News</a>
+<a href="#analytics">📊 Analytics</a>
+<a href="#settings">⚙ Settings</a>
+
+</div>
+
+<div class="main">
+
+<section id="dashboard">
+
+<h1 class="title">
+📊 Crypto Dashboard
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Bitcoin</h2>
+
+<div class="price">
+$63,240
+</div>
+
+<p class="green">
+▲ +5.2%
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Ethereum</h2>
+
+<div class="price">
+$3,420
+</div>
+
+<p class="green">
+▲ +3.1%
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Solana</h2>
+
+<div class="price">
+$148
+</div>
+
+<p class="red">
+▼ -1.4%
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>Dogecoin</h2>
+
+<div class="price">
+$0.14
+</div>
+
+<p class="green">
+▲ +2.6%
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="market">
+
+<h1 class="title">
+📈 Live Market
+</h1>
+
+<div class="table-box">
+
+<table>
+
+<tr>
+
+<th>Coin</th>
+<th>Price</th>
+<th>24H</th>
+<th>Market Cap</th>
+<th>Action</th>
+
+</tr>
+
+<tr>
+
+<td>Bitcoin</td>
+<td>$63,240</td>
+<td class="green">+5.2%</td>
+<td>$1.2T</td>
+
+<td>
+<button class="buy">
+Buy
+</button>
+</td>
+
+</tr>
+
+<tr>
+
+<td>Ethereum</td>
+<td>$3,420</td>
+<td class="green">+3.1%</td>
+<td>$420B</td>
+
+<td>
+<button class="buy">
+Buy
+</button>
+</td>
+
+</tr>
+
+<tr>
+
+<td>Ripple</td>
+<td>$0.58</td>
+<td class="red">-0.8%</td>
+<td>$31B</td>
+
+<td>
+<button class="sell">
+Sell
+</button>
+</td>
+
+</tr>
+
+<tr>
+
+<td>Cardano</td>
+<td>$0.72</td>
+<td class="green">+1.4%</td>
+<td>$25B</td>
+
+<td>
+<button class="buy">
+Buy
+</button>
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<section id="wallet">
+
+<h1 class="title">
+💰 Wallet
+</h1>
+
+<div class="wallet-box">
+
+<div class="wallet">
+
+<h2>Total Balance</h2>
+
+<div class="price">
+$152,450
+</div>
+
+<p class="green">
+▲ +8.5% This Month
+</p>
+
+</div>
+
+<div class="wallet">
+
+<h2>Portfolio Growth</h2>
+
+<p style="margin-top:15px;">
+80% Profit Growth
+</p>
+
+<div class="progress">
+
+<div class="bar">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="coins">
+
+<h1 class="title">
+🪙 Popular Coins
+</h1>
+
+<div class="coin-grid">
+
+<div class="coin-card">
+
+<img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png">
+
+<h2>Bitcoin</h2>
+
+<p>
+Largest Cryptocurrency
+</p>
+
+</div>
+
+<div class="coin-card">
+
+<img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+
+<h2>Ethereum</h2>
+
+<p>
+Smart Contract Platform
+</p>
+
+</div>
+
+<div class="coin-card">
+
+<img src="https://cryptologos.cc/logos/solana-sol-logo.png">
+
+<h2>Solana</h2>
+
+<p>
+Fast Blockchain Network
+</p>
+
+</div>
+
+<div class="coin-card">
+
+<img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png">
+
+<h2>Dogecoin</h2>
+
+<p>
+Popular Meme Coin
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="news">
+
+<h1 class="title">
+📰 Crypto News
+</h1>
+
+<div class="news-grid">
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1621761191319-c6fb62004040">
+
+<div class="news-content">
+
+<h2>Bitcoin Hits Record</h2>
+
+<p>
+Bitcoin continues strong bullish growth this week.
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0">
+
+<div class="news-content">
+
+<h2>Ethereum Upgrade</h2>
+
+<p>
+Ethereum launches major speed improvements.
+</p>
+
+</div>
+
+</div>
+
+<div class="news">
+
+<img src="https://images.unsplash.com/photo-1640161704729-cbe966a08476">
+
+<div class="news-content">
+
+<h2>Top Altcoins</h2>
+
+<p>
+Solana and Cardano gain investor attention.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="analytics">
+
+<h1 class="title">
+📊 Analytics
+</h1>
+
+<div class="analytics">
+
+<div class="analytics-card">
+
+<h2>75%</h2>
+
+<p>
+Portfolio Growth
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>120+</h2>
+
+<p>
+Transactions
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>$45K</h2>
+
+<p>
+Monthly Profit
+</p>
+
+</div>
+
+<div class="analytics-card">
+
+<h2>24/7</h2>
+
+<p>
+Market Tracking
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="settings">
+
+<h1 class="title">
+⚙ Account Settings
+</h1>
+
+<div class="settings-box">
+
+<input type="text"
+placeholder="Full Name">
+
+<input type="email"
+placeholder="Email Address">
+
+<input type="password"
+placeholder="Password">
+
+<button class="buy">
+Save Settings
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 CryptoX Dashboard App
+</p>
+
+</footer>
+
+</div>
+
+</body>
+</html>

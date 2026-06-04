@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="UTF-8">
+
+<title>CookVerse PRO</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#111111;
+color:white;
+}
+
+.navbar{
+background:#ff6b00;
+padding:20px;
+text-align:center;
+font-size:34px;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:45px 20px;
+background:linear-gradient(#ff8c42,#111111);
+}
+
+.hero h1{
+font-size:52px;
+color:#fff3e0;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.hero img{
+width:320px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0px 4px 12px black;
+}
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+padding:25px;
+}
+
+.card{
+background:#1f1f1f;
+width:270px;
+padding:22px;
+border-radius:22px;
+text-align:center;
+box-shadow:0px 4px 10px black;
+}
+
+.card h2{
+color:#ffb347;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+🍳 CookVerse PRO
+
+</div>
+
+
+
+<div class="hero">
+
+<h1>
+
+Cook Like A Pro 👨‍🍳
+
+</h1>
+
+<p>
+
+Recipes • Cooking Tips • Spice World • Kitchen Hacks
+
+</p>
+
+<img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d">
+
+</div>
+  <div class="container">
+
+<div class="card">
+
+<h2>🍕 Trending Recipes</h2>
+
+<p>
+
+🍕 Pizza<br><br>
+
+🍔 Burger<br><br>
+
+🍚 Biryani<br><br>
+
+🍰 Chocolate Cake
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🌶️ Spice Lab</h2>
+
+<p>
+
+🌶️ Chilli → Spicy flavor<br><br>
+
+✨ Turmeric → Color + Health<br><br>
+
+🖤 Pepper → Strong taste
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>👨‍🍳 Chef Tips</h2>
+
+<p>
+
+🔪 Knife skills matter<br><br>
+
+🥦 Use fresh ingredients<br><br>
+
+🧂 Balance spices carefully
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🥔 Recipe Generator</h2>
+
+<p>
+
+Type an ingredient 😊
+
+</p>
+
+<input
+type="text"
+id="food"
+placeholder="Potato"
+style="
+padding:12px;
+border-radius:12px;
+width:80%;
+font-size:16px;">
+
+<br><br>
+
+<button
+onclick="recipe()"
+style="
+background:#ff6b00;
+color:white;
+border:none;
+padding:12px 22px;
+border-radius:12px;
+font-size:16px;">
+
+Generate Recipe
+
+</button>
+
+<p id="result">
+
+Recipe ideas will appear here 🍳
+
+</p>
+
+</div>
+
+</div>
+  <script>
+
+function recipe(){
+
+let food =
+document.getElementById("food")
+.value.toLowerCase();
+
+if(food.includes("potato")){
+
+document.getElementById("result")
+.innerHTML =
+
+"🍟 Fries<br><br>🥔 Chips<br><br>🍛 Potato Curry";
+
+}
+
+else if(food.includes("tomato")){
+
+document.getElementById("result")
+.innerHTML =
+
+"🍅 Tomato Soup<br><br>🍝 Pasta Sauce<br><br>🥗 Salad";
+
+}
+
+else if(food.includes("egg")){
+
+document.getElementById("result")
+.innerHTML =
+
+"🍳 Omelette<br><br>🥚 Egg Curry<br><br>🍔 Egg Sandwich";
+
+}
+
+else{
+
+document.getElementById("result")
+.innerHTML =
+
+"😄 Try: Potato, Tomato or Egg";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

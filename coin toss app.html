@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coin Toss App</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#1e3c72,#2a5298);
+    }
+
+    .container{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      text-align:center;
+      width:320px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1{
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    .coin{
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      margin:20px auto;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-size:28px;
+      font-weight:bold;
+      color:white;
+      background:gold;
+      border:5px solid #d4af37;
+      transition:transform 0.8s;
+    }
+
+    button{
+      padding:12px 25px;
+      border:none;
+      border-radius:10px;
+      background:#2a5298;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#1e3c72;
+    }
+
+    .result{
+      margin-top:20px;
+      font-size:22px;
+      color:#444;
+      font-weight:bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Coin Toss</h1>
+
+    <div class="coin" id="coin">
+      HEADS
+    </div>
+
+    <button onclick="tossCoin()">Toss Coin</button>
+
+    <div class="result" id="result">
+      Click the button
+    </div>
+  </div>
+
+  <script>
+    function tossCoin() {
+      const coin = document.getElementById("coin");
+      const result = document.getElementById("result");
+
+      coin.style.transform = "rotateY(1080deg)";
+
+      setTimeout(() => {
+        let toss = Math.random() < 0.5 ? "HEADS" : "TAILS";
+
+        coin.innerHTML = toss;
+        result.innerHTML = "Result: " + toss;
+
+        if(toss === "HEADS"){
+          coin.style.background = "gold";
+        } else {
+          coin.style.background = "silver";
+        }
+
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>

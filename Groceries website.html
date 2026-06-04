@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Fresh Grocery Store</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2fff2;
+        }
+
+        header {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: darkgreen;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        .banner {
+            background-color: lightgreen;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .banner h2 {
+            font-size: 35px;
+            color: darkgreen;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            width: 220px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+        }
+
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkgreen;
+        }
+
+        footer {
+            background-color: green;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Fresh Grocery Store</h1>
+        <p>Healthy Food for Everyone</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Vegetables</a>
+        <a href="#">Fruits</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="banner">
+        <h2>Welcome to Our Grocery Shop</h2>
+        <p>Fresh and Healthy Groceries Every Day</p>
+    </div>
+
+    <section class="products">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce" alt="Apple">
+            <h3>Fresh Apples</h3>
+            <p class="price">₹120 Kg</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999" alt="Tomato">
+            <h3>Tomatoes</h3>
+            <p class="price">₹40 Kg</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Vegetables">
+            <h3>Green Vegetables</h3>
+            <p class="price">₹60 Kg</p>
+            <button>Buy Now</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Fresh Grocery Store for Healthy food</p>
+    </footer>
+
+</body>
+</html>
